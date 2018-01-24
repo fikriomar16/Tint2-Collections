@@ -1,0 +1,41 @@
+#!/bin/bash
+VOL_STEP=2
+
+function alter_volume {
+	CUR_VOL=$(audtool --get-volume)
+	NEW_VOL=$(expr $CUR_VOL + $1)
+	if [ "$NEW_VOL" -lt 0 ]; then
+		NEW_VOL=0
+	elif [ "$NEW_VOL" -gt 100 ]; then
+		NEW_VOL=100
+	fi
+	audtool --set-volume $NEW_VOL
+}
+
+case "$1" in
+	info)
+		echo "$(audtool current-song-tuple-data artist) - $(audtool current-song-tuple-data title) "
+		;;
+	start)
+		$(pgrep audacious > /dev/null) && audtool mainwin-show || audacious
+		;;
+	next)
+		audtool --playlist-advance
+		;;
+	prev)
+		audtool --playlist-reverse
+		;;
+	volup)
+		alter_volume $VOL_STEP
+		;;
+	voldown)
+		alter_volume -$VOL_STEP
+		;;
+	ppause)
+		audtool --playback-playpause
+		;;
+	*)
+		echo "WRONG INPUT"
+		;;
+esac
+

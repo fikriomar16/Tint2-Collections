@@ -1,0 +1,63 @@
+#!/bin/bash
+ICON_PATH="$HOME/.config/tint2/icons/bright/"
+ICON_EXT=".svg"
+
+function get_bat_device {
+	BAT_DEV=$(upower -e | grep BAT)
+}
+
+function get_percentage {
+	get_bat_device
+	BAT_PCT=$(upower -i $BAT_DEV | grep 'percentage:' | awk '{print $2}')
+}
+
+function get_state {
+	get_bat_device
+	BAT_STA=$(upower -i $BAT_DEV | grep 'state:' | awk '{print $2}')
+}
+
+
+function get_icon_name {
+	get_bat_device
+	get_percentage
+	get_state
+	BAT_INT=$(echo $BAT_PCT | cut -d'%' -f1)
+	BAT_NAM="battery-full"
+	if [ "$BAT_INT" -lt 11 ]; then
+		BAT_NAM="battery-empty"
+	elif [ "$BAT_INT" -lt 21 ]; then
+		BAT_NAM="battery-low"
+	elif [ "$BAT_INT" -lt 51 ]; then
+		BAT_NAM="battery-medium"
+	elif [ "$BAT_INT" -lt 81 ]; then
+		BAT_NAM="battery-good"
+	fi
+	if [[ "$BAT_STA" == "charging" ]]; then
+		BAT_ICN="${BAT_NAM}-charging-symbolic"
+	else
+		BAT_ICN="${BAT_NAM}-symbolic"
+	fi
+}
+
+case "$1" in
+	icon)
+		get_icon_name
+		echo "${ICON_PATH}${BAT_ICN}${ICON_EXT}"
+		;;
+	perc)
+		get_percentage
+		echo "$BAT_PCT "
+		;;
+	stat)
+		get_state
+		echo $BAT_STA
+		;;
+	full)
+		get_percentage
+		get_state
+		echo "$BAT_PCT ($BAT_STA) "
+		;;
+	*)
+		echo "WRONG INPUT"
+		;;
+esac

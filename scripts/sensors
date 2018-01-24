@@ -1,0 +1,41 @@
+#!/bin/bash
+ICON_PATH="$HOME/.config/tint2/icons/bright/"
+HIGH_TEMP=80
+
+function get_cpu_temp {
+    CPU_TEMP=$(sensors | grep -oP 'Physical.*?\+\K[0-9]+')
+}
+
+function get_mem_use {
+    RAM_USE=$(free | grep Mem | awk '{printf "%.0f\n", $3/$2 * 100.0}')
+}
+
+function get_cpu_use {
+    CPU_USE=0
+}
+
+case "$1" in
+    temp)
+        get_cpu_temp
+        echo "$CPU_TEMP° "
+        ;;
+    temp-icon)
+        get_cpu_temp
+        ICN_NAM="temperature-critical"
+        if [ "$CPU_TEMP" -lt "$HIGH_TEMP" ]; then
+            ICN_NAM="temperature"
+        fi
+        echo "${ICON_PATH}${ICN_NAM}.svg"
+        ;;
+    cpu-use)
+        get_cpu_use
+        echo "${CPU_USE}% "
+        ;;
+    ram-use)
+        get_mem_use
+        echo "${RAM_USE}% "
+        ;;
+    *)
+        echo "WRONG INPUT"
+        ;;
+esac

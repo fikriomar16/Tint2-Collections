@@ -1,0 +1,42 @@
+#!/bin/bash
+
+function get_current_desktop {
+    CUR_DSK=$(wmctrl -d | grep \* | tr -s ' ' | cut -d' ' -f10)
+}
+
+function get_desktop_count {
+    MAX_DSK=$(wmctrl -d | wc -l)
+}
+
+function switch_desktop {
+    get_current_desktop
+    get_desktop_count
+    MAX_IDX=$(expr $MAX_DSK - 1)
+    NEW_DSK=$(expr $CUR_DSK - 1 + $1)
+    if [ "$NEW_DSK" -lt 0 ]; then
+        NEW_DSK=0
+    elif [ "$NEW_DSK" -gt "$MAX_IDX" ]; then
+        NEW_DSK="$MAX_IDX"
+    fi
+    wmctrl -s $NEW_DSK
+}
+
+case "$1" in
+    info)
+        get_current_desktop
+        echo " $CUR_DSK "
+        ;;
+    number)
+        get_current_desktop
+        echo $CUR_DSK
+        ;;
+    next)
+        switch_desktop 1
+        ;;
+    prev)
+        switch_desktop -1
+        ;;
+    *)
+        echo "WRONG INPUT"
+        ;;
+esac
