@@ -1,4 +1,6 @@
-Emmmm, Koleksi Tint2 aing silahkan dicomot sadja XD
+Emmmm, Koleksi Tint2 aing silahkan dicomot sadja XD <br />
+
+Shortcuts for tint2 launcher : [Shortcut](https://github.com/fikriomar16/dotfiles/tree/master/Shortcut)
 
 ## Preview
 ## Minimalist
