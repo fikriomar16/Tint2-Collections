@@ -4,6 +4,9 @@ Emmmm, Koleksi Tint2 aing silahkan dicomot sadja XD
 ## Minimalist
 ![alt text](https://github.com/fikriomar16/Tint2-Collections/blob/master/Minimalist/2017-12-30-035802_1366x768_scrot.png)
 
+## PowerArc
+![alt text](https://github.com/fikriomar16/Tint2-Collections/blob/master/PowerArc/2018-01-23-082503_1366x768_scrot.png)
+
 ## Neomix
 ![alt text](https://github.com/fikriomar16/Tint2-Collections/blob/master/Neomix/2017-07-15-135256_1366x768_scrot.png)
 
