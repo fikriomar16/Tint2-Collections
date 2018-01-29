@@ -1,0 +1,20 @@
+#!/bin/bash
+nowplaying=$(mpc -p 6601 current)
+playing="  "
+paused="  "
+stopped="  "
+
+case $BLOCK_BUTTON in
+  1) mpc -p 6601 toggle  ;;
+  2) mpc -p 6601 stop  ;;
+  3) ncmpcpp2  ;;
+  4) mpc -p 6601 prev  ;;
+  5) mpc -p 6601 next  ;;
+esac
+
+status=$(mpc -p 6601 status | sed -n 's/^\[\([^])]*\)\].*$/\1/p')
+case $status in
+  playing) echo "$playing $nowplaying " ;;
+  paused)  echo "$paused $nowplaying "  ;;
+  *)       echo "$stopped " ;;
+esac

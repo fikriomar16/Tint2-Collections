@@ -7,7 +7,10 @@ Shortcuts for tint2 launcher : [Shortcut](https://github.com/fikriomar16/dotfile
 ![Minimalist](https://github.com/fikriomar16/Tint2-Collections/blob/master/Minimalist/2017-12-30-035802_1366x768_scrot.png)
 
 ## PowerArc
-![PowerArc](https://github.com/fikriomar16/Tint2-Collections/blob/master/PowerArc/2018-01-23-082503_1366x768_scrot.png)
+![PowerArc](https://github.com/fikriomar16/Tint2-Collections/blob/master/PowerArc/PowerArc.png)
+
+## PowerArcDark
+![PowerArcDark](https://github.com/fikriomar16/Tint2-Collections/blob/master/PowerArc/PowerArcDark.png)
 
 ## Neomix
 ![Neomix](https://github.com/fikriomar16/Tint2-Collections/blob/master/Neomix/2017-07-15-135256_1366x768_scrot.png)
