@@ -12,6 +12,9 @@ Shortcuts for tint2 launcher : [Shortcut](https://github.com/fikriomar16/dotfile
 ## PowerArcDark
 ![PowerArcDark](https://github.com/fikriomar16/Tint2-Collections/blob/master/PowerArc/PowerArcDark.png)
 
+## PolyTint2
+![PolyTint2](https://github.com/fikriomar16/Tint2-Collections/blob/master/PolyTint2/PolyTint2.png)
+
 ## Neomix
 ![Neomix](https://github.com/fikriomar16/Tint2-Collections/blob/master/Neomix/2017-07-15-135256_1366x768_scrot.png)
 
