@@ -29,3 +29,6 @@ Shortcuts for tint2 launcher : [Shortcut](https://github.com/fikriomar16/dotfile
 
 ## Stolen from n0ym4y(DeviantArt)
 ![Stolen from n0ym4y](https://github.com/fikriomar16/Tint2-Collections/blob/master/Stolen%20from%20n0ym4y/2017-11-18-073520_1366x768_scrot.png)
+
+## License
+The code is available under the [MIT License](https://github.com/fikriomar16/Tint2-Collections/blob/master/LICENSE.md)
